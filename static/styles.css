@@ -1,0 +1,63 @@
+/* Homepage */
+
+body {
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  padding: 0;
+  margin: 0;
+}
+
+
+/* Header */
+
+.navbar-logo {
+  background: url('/static/logo.png') center center / contain;
+  width: 120px;
+  height: 42px;
+  margin: 0 20px;
+}
+
+.header nav {
+  display: flex;
+  padding: 10px 0px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.3);
+}
+
+/* ==== Main ==== */
+
+.page-title h1 {
+  line-height: 36px;
+  font-size: 30px;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  font-stretch: normal;
+  font-weight: 600;
+  color: rgb(33, 33, 33);
+  text-align: center;
+  margin: 0px;
+}
+
+.page-title h2 {
+  line-height: 30px;
+  font-size: 22px;
+  font-family: "Source Sans Pro", Helvetica, Arial, sans-serif;
+  font-stretch: normal;
+  font-weight: 300;
+  color: rgb(33, 33, 33);
+  text-align: center;
+  margin: 0px;
+}
+
+/* ==== Footer ==== */
+
+.footer {
+  display: flex;
+  justify-content: center;
+  background: #222 !important;
+  font-size: 25px !important;
+}
+
+.footer div p {
+  font-size: 20px;
+  color: #aaa;
+  line-height: 1.2em;
+}
+

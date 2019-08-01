@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+{% load static %}
+<html>
+  <head>
+
+	<title>spendwise</title>
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+
+	{# --- IMAGES --- #}
+	<link rel="prefetch" href="{% static 'logo.png' %}" type="image/png"/>
+
+	{# --- FONTS --- #}
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css">
+    <link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro' rel='stylesheet' type='text/css'>
+
+	{# --- CSS --- #}
+	<link rel='stylesheet' href='{% static 'styles.css' %}?v=1' type='text/css'/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.7.4/css/bulma.min.css">
+
+	{# --- JS --- #}
+
+  </head>
+  <body>
+
+	{# --- Header & Navigation --- #}
+	{% include 'spendwise/base/header.html' %}
+
+	{# --- Content --- #}
+	{% block content %}{% endblock %}
+
+	{# --- Footer --- #}
+	<footer class="footer">
+	  {% include 'spendwise/base/footer.html' %}
+	</footer>
+
+  </body>
+</html>
+
