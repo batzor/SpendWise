@@ -12,12 +12,13 @@ class Tag(models.Model):
 
 class Transaction(models.Model):
     user = models.ForeignKey(User, on_delete=models.CASCADE)
-    date = models.DateTimeField()
+    datetime = models.DateTimeField()
+    description = models.CharField(max_length=50, null=True)
     amount = models.IntegerField()
-    description = models.CharField(max_length=50)
     tag = models.ForeignKey(Tag, null=True, on_delete=models.SET_NULL)
 
     def assign_tag(self):
+        self.tag = None
         tags = Tag.objects.all()
         for tag in tags:
             if tag.keyword in self.description:

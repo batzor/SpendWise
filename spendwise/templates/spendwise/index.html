@@ -8,6 +8,29 @@
   <h1>Know your expense</h1>
   <h2>Import your transactions from Excel file</h2>
 </div>
+
+{% if user.is_authenticated %}
+<form action="{% url "index" %}" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+  <input type="file"
+		 title="Upload excel file"
+   name="excel_file"
+   style="border: 1px solid black; padding: 5px;"
+   required="required">
+  <p>
+	<input type="submit" value="Upload" style="border: 1px solid green; padding:5px; border-radius: 2px; cursor: pointer;">
+</form>
+{% else %}
+<h1>Login to upload</h1>
+{% endif %}
+
+{% for row in excel_data %}
+{% for cell in row %}
+{{ cell }}&nbsp;&nbsp;
+{% endfor %}
+<br>
+{% endfor %}
+
 <br></br>
 <br></br>
 <br></br>
