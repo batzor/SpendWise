@@ -31,6 +31,6 @@ def index(request):
                 datetime=date,
                 description=description,
                 amount=amount)
-            transaction.assign_tag()
+            transaction.find_place()
             transaction.save()
         return render(request, 'spendwise/index.html')
