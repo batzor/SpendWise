@@ -23,10 +23,14 @@
   <body>
 
 	{# --- Header & Navigation --- #}
+    <header class="page-header">
 	{% include 'spendwise/base/header.html' %}
+    </header>
 
 	{# --- Content --- #}
-	{% block content %}{% endblock %}
+    <div class="main">
+	{% block content %} {% endblock %}
+    </div>
 
 	{# --- Footer --- #}
 	<footer class="footer">
