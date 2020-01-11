@@ -34,3 +34,12 @@ def index(request):
             transaction.find_place()
             transaction.save()
         return render(request, 'spendwise/index.html')
+
+def txs(request):
+    if request.user.is_authenticated:
+        user_transactions = Transaction.objects.filter(user=request.user).order_by('-datetime')
+        print(user_transactions.count())
+        context = {'txs': user_transactions}
+        return render(request, 'spendwise/txs.html', context)
+    else:
+        return index(request)
