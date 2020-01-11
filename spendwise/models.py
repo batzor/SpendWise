@@ -39,6 +39,8 @@ class Transaction(models.Model):
         self.place = None
         places = Place.objects.all()
         for place in places:
-            if place.keyword == self.description:
+            if self.description is None:
+                continue
+            if place.keyword in self.description:
                 self.place = place
                 return
